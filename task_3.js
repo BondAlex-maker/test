@@ -1,10 +1,11 @@
 const goalArr = [
     ["Hello", "World"],
     ["Brad", "came", "to","dinner","with", "us"],
+    ['LALALA', 'lala', "lalal", 'lslsls', "slalege"],
     ["He", "loves", 'tacos']
 ];
 
-const ruleArr = ["LEFT","RIGHT","LEFT"];
+const ruleArr = ["LEFT","RIGHT","LEFT", "LEFT"];
 
 function checkLength (goalArr, ruleArr){
 
@@ -12,6 +13,7 @@ function checkLength (goalArr, ruleArr){
     let result = [];
     let outerArr = [];
     let index;
+    let ruleResultArr = [];
 
     for(let i = 0; i<goalArr.length; i++) {
         let str = goalArr[i].join(' ');
@@ -21,19 +23,20 @@ function checkLength (goalArr, ruleArr){
             for (let i = 0; i < insideArr.length; i++) {
                 outerArr.push([insideArr[i].trim()]);
             }
-            for (let j = 0; j < insideArr.length - 1; j++) {
-                ruleArr.splice(index, 0, ruleArr[i]);
+            for (let j = 0; j < insideArr.length; j++) {
+                ruleResultArr.push(ruleArr[i]);
             }
 
         }
         if (str.length < 16) {
             outerArr.push([str]);
+            ruleResultArr.push(ruleArr[i]);
 
 
         }
 
     }
-    result.push(outerArr, ruleArr);
+    result.push(outerArr, ruleResultArr);
 
     return result;
         }
