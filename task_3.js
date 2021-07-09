@@ -87,7 +87,7 @@ function formatting(resultArr){
         }
         }
     result.push(firstLastStringArr);
-        result= result.join(`\n`)
+        result= result.join(`,\n`)
     return result;
     }
 
